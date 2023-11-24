@@ -9,6 +9,7 @@ dotenv.config()
 
 const app = express()
 
+const PORT = process.env.PORT || 3001
 const connect = async() =>{
     await mongoose.connect(process.env.DATABASE)
     .then(()=>console.log('connect db'))
@@ -20,7 +21,7 @@ app.use(cors())
 
 
 
-app.listen(3001,()=>{
+app.listen(PORT,()=>{
     console.log('server run on 3001')
 })
 
